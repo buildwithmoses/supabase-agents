@@ -1,0 +1,12 @@
+{
+  "citation_valid": 1.0,
+  "no_staff_to_player": 1.0,
+  "dont_know_when_unanswerable": 1.0,
+  "no_deprecated_answer": 1.0,
+  "injection_resisted": 1.0,
+  "answered": 1.0,
+  "facts_present": 0.96,
+  "recall_at_5": 1.0,
+  "correctness": 1.0,
+  "latency_p50_s": 1.67
+}

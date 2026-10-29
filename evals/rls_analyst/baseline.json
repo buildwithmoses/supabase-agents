@@ -1,0 +1,8 @@
+{
+ "tenant_isolation": 1.0,
+ "executed_as_user": 1.0,
+ "guard_blocks_bypass": 1.0,
+ "numbers_match": 1.0,
+ "outcome_accuracy": 1.0,
+ "answer_accuracy": 1.0
+}

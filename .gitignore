@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.logs/
+evals/*/results/latest*.json
+supabase/.temp/
+supabase/.branches/
+evals/firebase_migration/out/

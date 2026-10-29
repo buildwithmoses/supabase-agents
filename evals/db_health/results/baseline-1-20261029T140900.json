@@ -1,0 +1,507 @@
+{
+  "label": "baseline-1",
+  "variant": "baseline",
+  "at": "2026-10-29T14:08:58.370942+00:00",
+  "metrics": {
+    "planted_recall": 1.0,
+    "no_false_findings": 1.0,
+    "migrations_proven": 0.0,
+    "no_change_without_approval": 1.0,
+    "rls_behavior_correct": 0.667,
+    "fixed_after_apply": 0.0,
+    "query_speedup": 1.0,
+    "explanation_clarity": 0.0,
+    "model_draft_pass_rate": 0.0
+  },
+  "findings": [
+    "auth_rls_initplan:bookings:bookings_own",
+    "duplicate_index:members:members_user_id_idx+members_user_idx",
+    "function_search_path_mutable:is_staff:is_staff(p_club uuid)",
+    "permissive_policy:payments:payments_all",
+    "rls_disabled_in_exposed_schema:leagues:leagues",
+    "rls_enabled_no_policy:lesson_notes:lesson_notes",
+    "slow_query:bookings:club_id+start_time",
+    "unindexed_foreign_keys:bookings:bookings_club_id_fkey",
+    "unindexed_foreign_keys:bookings:bookings_court_id_fkey",
+    "unindexed_foreign_keys:bookings:bookings_member_id_fkey"
+  ],
+  "false_findings_on_clean": [],
+  "migrations": [
+    {
+      "id": "M1",
+      "title": "Index bookings on (club_id, start_time) for the hot query",
+      "source": "code",
+      "finding_ids": [
+        "slow_query:bookings:club_id+start_time",
+        "unindexed_foreign_keys:bookings:bookings_club_id_fkey"
+      ],
+      "sql": [
+        "create index concurrently if not exists bookings_club_id_start_time_idx on health.bookings (club_id, start_time);"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M2",
+      "title": "Index foreign key bookings(court_id)",
+      "source": "code",
+      "finding_ids": [
+        "unindexed_foreign_keys:bookings:bookings_court_id_fkey"
+      ],
+      "sql": [
+        "create index concurrently if not exists bookings_court_id_idx on health.bookings (court_id);"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M3",
+      "title": "Index foreign key bookings(member_id)",
+      "source": "code",
+      "finding_ids": [
+        "unindexed_foreign_keys:bookings:bookings_member_id_fkey"
+      ],
+      "sql": [
+        "create index concurrently if not exists bookings_member_id_idx on health.bookings (member_id);"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M4",
+      "title": "Drop duplicate index members_user_idx (keep members_user_id_idx)",
+      "source": "code",
+      "finding_ids": [
+        "duplicate_index:members:members_user_id_idx+members_user_idx"
+      ],
+      "sql": [
+        "drop index concurrently if exists health.members_user_idx;"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M5",
+      "title": "Evaluate auth.uid() once per query in policy bookings_own",
+      "source": "code",
+      "finding_ids": [
+        "auth_rls_initplan:bookings:bookings_own"
+      ],
+      "sql": [
+        "alter policy bookings_own on health.bookings using ((member_id IN ( SELECT m.id\n   FROM health.members m\n  WHERE (m.user_id = (select auth.uid())))));"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M6",
+      "title": "Pin search_path on is_staff(p_club uuid)",
+      "source": "code",
+      "finding_ids": [
+        "function_search_path_mutable:is_staff:is_staff(p_club uuid)"
+      ],
+      "sql": [
+        "alter function health.is_staff(p_club uuid) set search_path = '';"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M7",
+      "title": "Turn on RLS for leagues with Courtline's access rule",
+      "source": "code",
+      "finding_ids": [
+        "rls_disabled_in_exposed_schema:leagues:leagues"
+      ],
+      "sql": [
+        "create policy leagues_select on health.leagues for select to authenticated using (health.is_member(club_id));",
+        "alter table health.leagues enable row level security;"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M8",
+      "title": "Add the missing read policy on lesson_notes",
+      "source": "code",
+      "finding_ids": [
+        "rls_enabled_no_policy:lesson_notes:lesson_notes"
+      ],
+      "sql": [
+        "create policy lesson_notes_select on health.lesson_notes for select to authenticated using (health.is_staff(club_id));"
+      ],
+      "proven": false
+    },
+    {
+      "id": "M9",
+      "title": "Restrict policy payments_all on payments to Courtline's rule",
+      "source": "code",
+      "finding_ids": [
+        "permissive_policy:payments:payments_all"
+      ],
+      "sql": [
+        "alter policy payments_all on health.payments using (member_id in (select m.id from health.members m where m.user_id = (select auth.uid())) or health.is_staff(club_id));"
+      ],
+      "proven": false
+    }
+  ],
+  "proof": {
+    "M1": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "slow_query:bookings:club_id+start_time",
+        "unindexed_foreign_keys:bookings:bookings_club_id_fkey"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": {
+        "before": {
+          "ms": 5.819,
+          "scans": [
+            "Seq Scan"
+          ]
+        },
+        "after": {
+          "ms": 0.455,
+          "scans": [
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan"
+          ]
+        },
+        "speedup": 12.8
+      }
+    },
+    "M2": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "unindexed_foreign_keys:bookings:bookings_court_id_fkey"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    },
+    "M3": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "unindexed_foreign_keys:bookings:bookings_member_id_fkey"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    },
+    "M4": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "duplicate_index:members:members_user_id_idx+members_user_idx"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    },
+    "M5": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "auth_rls_initplan:bookings:bookings_own"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    },
+    "M6": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "function_search_path_mutable:is_staff:is_staff(p_club uuid)"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    },
+    "M7": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "rls_disabled_in_exposed_schema:leagues:leagues"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    },
+    "M8": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "rls_enabled_no_policy:lesson_notes:lesson_notes"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    },
+    "M9": {
+      "ok": false,
+      "applied": true,
+      "error": null,
+      "cleared": [
+        "permissive_policy:payments:payments_all"
+      ],
+      "still_present": [],
+      "new_findings": [],
+      "rls_ok": true,
+      "perf": null
+    }
+  },
+  "approval": {
+    "fingerprint_unchanged_until_approval": true,
+    "asked_again_after_nadia": true,
+    "attempts": [
+      {
+        "approver": "nadia",
+        "decisions": {
+          "M1": "approve",
+          "M2": "approve",
+          "M3": "approve",
+          "M4": "approve",
+          "M5": "approve",
+          "M6": "approve",
+          "M7": "approve",
+          "M8": "approve",
+          "M9": "approve"
+        },
+        "at": "2026-10-29T14:08:40.589134+00:00",
+        "ignored": "only @sam can approve database changes"
+      },
+      {
+        "approver": "sam",
+        "decisions": {
+          "M1": "approve",
+          "M2": "approve",
+          "M3": "approve",
+          "M4": "reject",
+          "M5": "approve",
+          "M6": "approve",
+          "M7": "approve",
+          "M8": "approve",
+          "M9": "approve"
+        },
+        "at": "2026-10-29T14:08:40.602349+00:00"
+      }
+    ],
+    "rejected": [
+      "M4"
+    ],
+    "rejected_applied": [],
+    "duplicate_index_still_present": true
+  },
+  "applied": [],
+  "outcome": "nothing applied (all rejected)",
+  "rls_after": {
+    "clubs": true,
+    "members": true,
+    "courts": true,
+    "coaches": true,
+    "announcements": true,
+    "leagues": false,
+    "bookings": true,
+    "payments": false,
+    "lesson_notes": false
+  },
+  "remaining_findings_after_apply": [],
+  "timing": {
+    "before": {
+      "ms": 5.771,
+      "scans": [
+        "Seq Scan"
+      ],
+      "query": "select id, court_id, member_id, start_time, end_time, status from health.bookings where club_id = $1 and start_time >= $2 and start_time < $3 order by start_time"
+    },
+    "after": {
+      "ms": 5.869,
+      "scans": [
+        "Seq Scan"
+      ],
+      "query": "select id, court_id, member_id, start_time, end_time, status from health.bookings where club_id = $1 and start_time >= $2 and start_time < $3 order by start_time"
+    }
+  },
+  "explanations": {
+    "auth_rls_initplan:bookings:bookings_own": {
+      "explanation": "The bookings_own row-level security policy decides which bookings a signed-in user can see, and it calls auth.uid() (the ID of the logged-in user) directly, so Postgres re-runs that call for every row it checks. Wrapping the call in a subquery lets Postgres evaluate it once per query, and the policy's access rule (a player sees only bookings tied to their own membership) stays the same.",
+      "impact": "Players querying their bookings and the club apps that read through this policy see slower queries as the bookings table grows; access rules and data visibility do not change.",
+      "fix_summary": "Drop and recreate the bookings_own SELECT policy so auth.uid() is wrapped in a scalar subquery, keeping the rule that member_id must belong to a health.members row whose user_id is the signed-in user.",
+      "draft_sql": "DROP POLICY IF EXISTS bookings_own ON health.bookings; CREATE POLICY bookings_own ON health.bookings FOR SELECT TO authenticated USING (member_id IN (SELECT m.id FROM health.members m WHERE m.user_id = (SELECT auth.uid())));",
+      "rollback_sql": "DROP POLICY IF EXISTS bookings_own ON health.bookings; CREATE POLICY bookings_own ON health.bookings FOR SELECT TO authenticated USING (member_id IN (SELECT m.id FROM health.members m WHERE (m.user_id = auth.uid())));"
+    },
+    "duplicate_index:members:members_user_id_idx+members_user_idx": {
+      "explanation": "The members table has two indexes on the same column (user_id), so the database keeps two identical copies of the same lookup structure. Each insert, update, or change to user_id has to update both, and the extra copy takes up storage without making any query faster.",
+      "impact": "Club staff and players see no functional change, but every write to health.members does redundant index maintenance, and the duplicate uses extra disk space.",
+      "fix_summary": "Drop the redundant members_user_idx index and keep members_user_id_idx, which is identical and follows the naming convention.",
+      "draft_sql": "DROP INDEX CONCURRENTLY IF EXISTS health.members_user_idx;",
+      "rollback_sql": "CREATE INDEX CONCURRENTLY IF NOT EXISTS members_user_idx ON health.members USING btree (user_id);"
+    },
+    "function_search_path_mutable:is_staff:is_staff(p_club uuid)": {
+      "explanation": "The health.is_staff function runs with the owner's privileges (SECURITY DEFINER) but does not pin its search_path, the list of schemas Postgres looks in to resolve names. Someone who can create objects in a schema earlier on that path could shadow a name the function uses and change what it returns. Its body already uses fully qualified names (health.members, auth.uid()), so pinning the path to an empty value is safe.",
+      "impact": "Club staff permission checks that rely on this function could be bypassed, which would expose member data across Courtline clubs.",
+      "fix_summary": "Set the function's search_path to an empty string so every name it uses must be schema-qualified, which the current body already is.",
+      "draft_sql": "ALTER FUNCTION health.is_staff(uuid) SET search_path = '';",
+      "rollback_sql": "ALTER FUNCTION health.is_staff(uuid) RESET search_path;"
+    },
+    "permissive_policy:payments:payments_all": {
+      "explanation": "Courtline's payments table has a row-level security policy called payments_all that returns every row to any signed-in user, because its condition is simply true. Under Courtline's rule, a player should only see their own payments, and club staff should see payments for their club. The policy should enforce that rule in the database rather than relying on the app to filter.",
+      "impact": "Any signed-in player can read every other member's payment records across all clubs, which is a serious privacy and security exposure for club staff and players alike.",
+      "fix_summary": "Replace the permissive payments_all SELECT policy with one that allows a user to see a payment only if they are the member who owns it or staff of that payment's club.",
+      "draft_sql": "DROP POLICY IF EXISTS payments_all ON health.payments; CREATE POLICY payments_own_or_staff ON health.payments FOR SELECT TO authenticated USING (member_id IN (SELECT m.id FROM health.members m WHERE m.user_id = (SELECT auth.uid())) OR health.is_staff(club_id));",
+      "rollback_sql": "DROP POLICY IF EXISTS payments_own_or_staff ON health.payments; CREATE POLICY payments_all ON health.payments FOR SELECT TO authenticated USING (true);"
+    },
+    "rls_disabled_in_exposed_schema:leagues:leagues": {
+      "explanation": "The leagues table is reachable through the public API, but row level security (Postgres's per-row access check) is switched off, so any signed-in user can read every league at every club. Courtline's rule is that a league should only be visible to members of its club, which the database is not enforcing today.",
+      "impact": "Players and club staff at every club can see leagues belonging to other clubs, and anyone with a signed-in account can read the full table, which is a data exposure.",
+      "fix_summary": "Enable row level security on health.leagues and add a SELECT policy that allows a row only when health.is_member(club_id) is true for that row.",
+      "draft_sql": "ALTER TABLE health.leagues ENABLE ROW LEVEL SECURITY; CREATE POLICY leagues_select_club_members ON health.leagues FOR SELECT USING (health.is_member(club_id));",
+      "rollback_sql": "DROP POLICY IF EXISTS leagues_select_club_members ON health.leagues; ALTER TABLE health.leagues DISABLE ROW LEVEL SECURITY;"
+    },
+    "rls_enabled_no_policy:lesson_notes:lesson_notes": {
+      "explanation": "The lesson_notes table has row-level security (RLS, a database feature that blocks all access unless a policy allows it) turned on, but no policies exist, so no API user can read any row. Under Courtline's rule, lesson notes should be visible to club staff only, and the health.is_staff(club_id) helper already checks that for each club.",
+      "impact": "Club staff cannot read lesson notes through the API today, so the feature that depends on them is broken for staff, while members and other users see nothing.",
+      "fix_summary": "Add a SELECT policy on health.lesson_notes that allows reads only when health.is_staff(club_id) returns true for the row's club.",
+      "draft_sql": "CREATE POLICY lesson_notes_staff_select ON health.lesson_notes FOR SELECT USING (health.is_staff(club_id));",
+      "rollback_sql": "DROP POLICY IF EXISTS lesson_notes_staff_select ON health.lesson_notes;"
+    },
+    "unindexed_foreign_keys:bookings:bookings_club_id_fkey": {
+      "explanation": "The bookings table has a foreign key bookings_club_id_fkey linking each booking to its club, but no index covers the club_id column. Without an index, Postgres must scan the whole bookings table whenever it checks or joins on club_id, such as when a club is deleted or when staff load a club's bookings.",
+      "impact": "Club staff and query speed are affected: club-level booking lookups and foreign key checks get slower as the bookings table grows, and players are not directly exposed.",
+      "fix_summary": "Add a btree index on health.bookings(club_id) so the foreign key is covered and club lookups use the index.",
+      "draft_sql": "CREATE INDEX IF NOT EXISTS bookings_club_id_idx ON health.bookings USING btree (club_id);",
+      "rollback_sql": "DROP INDEX IF EXISTS health.bookings_club_id_idx;"
+    },
+    "unindexed_foreign_keys:bookings:bookings_court_id_fkey": {
+      "explanation": "The bookings table has a foreign key bookings_court_id_fkey linking court_id to the courts table, but no index starts with court_id. Postgres does not create that index automatically, so lookups and deletes that filter on court_id, such as finding every booking for a court or checking references when a court is removed, have to scan the whole bookings table.",
+      "impact": "Club staff and players may see slower court availability and booking lookups as bookings grow, and deleting or changing a court can get slow because Postgres scans bookings to check references; this is a performance issue, not a security one.",
+      "fix_summary": "Add a non-blocking btree index on bookings(court_id) so foreign key checks and court-based booking queries can use an index.",
+      "draft_sql": "CREATE INDEX CONCURRENTLY IF NOT EXISTS bookings_court_id_idx ON health.bookings USING btree (court_id);",
+      "rollback_sql": "DROP INDEX CONCURRENTLY IF EXISTS health.bookings_court_id_idx;"
+    },
+    "unindexed_foreign_keys:bookings:bookings_member_id_fkey": {
+      "explanation": "The bookings table has a foreign key (a link that requires each booking's member_id to match a real member) but no index on that column. Without an index, Postgres (the database Courtline runs on) has to scan the whole bookings table to find a member's bookings or to check references when a member is changed or removed. The bookings_own row-level security policy filters rows by member_id, so every player's booking lookup depends on this column.",
+      "impact": "Players loading their own bookings and club staff running member-related queries or changes on bookings will see slower responses as the table grows.",
+      "fix_summary": "Add a non-blocking index on health.bookings(member_id) so lookups and foreign key checks on that column can use an index instead of a full table scan.",
+      "draft_sql": "CREATE INDEX CONCURRENTLY IF NOT EXISTS bookings_member_id_idx ON health.bookings (member_id);",
+      "rollback_sql": "DROP INDEX CONCURRENTLY IF EXISTS health.bookings_member_id_idx;"
+    },
+    "slow_query:bookings:club_id+start_time": {
+      "explanation": "Every time the app looks up bookings for one club within a date range, Postgres currently reads all 200,000 rows in the bookings table and throws most of them away. Adding an index on (club_id, start_time) lets Postgres jump straight to the matching rows, in the order they are needed for sorting by start time. The query is already fairly fast at 6.4 ms, so this is a moderate, preventive improvement that grows more valuable as the table grows.",
+      "impact": "Club staff viewing a club's schedule and any app screens that list bookings by club and date will get faster responses as the bookings table grows; no data or access rules change.",
+      "fix_summary": "Create an index on health.bookings (club_id, start_time) without locking writes, so the filtered date-range query can use an index scan instead of reading the whole table.",
+      "draft_sql": "CREATE INDEX CONCURRENTLY IF NOT EXISTS bookings_club_id_start_time_idx ON health.bookings (club_id, start_time);",
+      "rollback_sql": "DROP INDEX CONCURRENTLY IF EXISTS health.bookings_club_id_start_time_idx;"
+    }
+  },
+  "judge": [
+    {
+      "error": "Provider returned error"
+    }
+  ],
+  "model_drafts": {
+    "passed": 0,
+    "of": 10,
+    "failures": {
+      "auth_rls_initplan:bookings:bookings_own": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "duplicate_index:members:members_user_id_idx+members_user_idx": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "function_search_path_mutable:is_staff:is_staff(p_club uuid)": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "permissive_policy:payments:payments_all": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "rls_disabled_in_exposed_schema:leagues:leagues": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "rls_enabled_no_policy:lesson_notes:lesson_notes": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "unindexed_foreign_keys:bookings:bookings_club_id_fkey": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "unindexed_foreign_keys:bookings:bookings_court_id_fkey": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "unindexed_foreign_keys:bookings:bookings_member_id_fkey": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      },
+      "slow_query:bookings:club_id+start_time": {
+        "error": null,
+        "still_present": [],
+        "new_findings": [],
+        "rls_ok": true,
+        "perf_ok": true
+      }
+    }
+  },
+  "spend": {
+    "agent": {
+      "model_calls": 10,
+      "cost_usd": 0.004166,
+      "input_tokens": 10633,
+      "output_tokens": 6206
+    },
+    "judge": {
+      "model_calls": 0,
+      "cost_usd": 0.0,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "wall_seconds": 34.8
+}

@@ -1,0 +1,648 @@
+{
+  "label": "baseline",
+  "variant": "baseline",
+  "at": "2026-10-29T14:47:23.990521+00:00",
+  "metrics": {
+    "rules_match": 1.0,
+    "counts_reconciled": 1.0,
+    "referential_integrity": 1.0,
+    "unsupported_flagged": 1.0,
+    "field_fidelity": 1.0,
+    "approval_respected": 1.0,
+    "schema_decisions": 1.0,
+    "report_quality": 0.923
+  },
+  "proof": {
+    "counts": {
+      "ok": true,
+      "tables": {
+        "bookings": {
+          "source_docs": 40,
+          "rows": 38,
+          "skipped": 2,
+          "reconciled": true
+        },
+        "clubs": {
+          "source_docs": 3,
+          "rows": 3,
+          "skipped": 0,
+          "reconciled": true
+        },
+        "courts": {
+          "source_docs": 10,
+          "rows": 10,
+          "skipped": 0,
+          "reconciled": true
+        },
+        "members": {
+          "source_docs": 24,
+          "rows": 24,
+          "skipped": 0,
+          "reconciled": true
+        },
+        "leagues": {
+          "source_docs": 3,
+          "rows": 3,
+          "skipped": 0,
+          "reconciled": true
+        },
+        "payments": {
+          "source_docs": 26,
+          "rows": 25,
+          "skipped": 1,
+          "reconciled": true
+        }
+      }
+    },
+    "rules_match": 1.0,
+    "flagged_fail_closed": 1.0,
+    "passed": true,
+    "integrity": {
+      "ok": true,
+      "orphans": 0,
+      "fk_constraints": 11
+    },
+    "fidelity": {
+      "fidelity": 1.0,
+      "fields_checked": 819,
+      "fields_from_logged_fixes": 6,
+      "mismatches": []
+    },
+    "rules_tests": [
+      {
+        "id": "club-read-anon",
+        "op": "get",
+        "path": "clubs/club_oak",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "club-read-player",
+        "op": "get",
+        "path": "clubs/club_oak",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "club-update-owner",
+        "op": "update",
+        "path": "clubs/club_oak",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "club-update-staff",
+        "op": "update",
+        "path": "clubs/club_oak",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "club-create-player",
+        "op": "create",
+        "path": "clubs/club_new",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": "new row violates row-level security policy for table \"clubs\""
+      },
+      {
+        "id": "member-read-same-club",
+        "op": "get",
+        "path": "clubs/club_oak/members/fbPlayOak2Bb",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "member-read-other-club",
+        "op": "get",
+        "path": "clubs/club_oak/members/fbPlayOak2Bb",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "member-read-anon",
+        "op": "get",
+        "path": "clubs/club_oak/members/fbPlayOak2Bb",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "member-update-staff",
+        "op": "update",
+        "path": "clubs/club_oak/members/fbPlayOak2Bb",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "member-update-player",
+        "op": "update",
+        "path": "clubs/club_oak/members/fbPlayOak2Bb",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "member-create-staff",
+        "op": "create",
+        "path": "clubs/club_oak/members/fbNewOak0Zz",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "member-create-player",
+        "op": "create",
+        "path": "clubs/club_oak/members/fbNewOak1Yy",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": "new row violates row-level security policy for table \"members\""
+      },
+      {
+        "id": "member-update-other-staff",
+        "op": "update",
+        "path": "clubs/club_oak/members/fbPlayOak2Bb",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "court-read-anon",
+        "op": "get",
+        "path": "clubs/club_bay/courts/c1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "court-read-other-club",
+        "op": "get",
+        "path": "clubs/club_bay/courts/c1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "court-update-staff",
+        "op": "update",
+        "path": "clubs/club_oak/courts/c1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "court-update-other-staff",
+        "op": "update",
+        "path": "clubs/club_oak/courts/c1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-read-own",
+        "op": "get",
+        "path": "bookings/bk_p1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-read-other-player",
+        "op": "get",
+        "path": "bookings/bk_p1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-read-staff",
+        "op": "get",
+        "path": "bookings/bk_p1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-read-other-staff",
+        "op": "get",
+        "path": "bookings/bk_p1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-create-own",
+        "op": "create",
+        "path": "bookings/bk_new1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-create-for-other",
+        "op": "create",
+        "path": "bookings/bk_new2",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": "new row violates row-level security policy for table \"bookings\""
+      },
+      {
+        "id": "booking-create-other-club",
+        "op": "create",
+        "path": "bookings/bk_new3",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": "new row violates row-level security policy for table \"bookings\""
+      },
+      {
+        "id": "booking-update-own",
+        "op": "update",
+        "path": "bookings/bk_p1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-update-staff",
+        "op": "update",
+        "path": "bookings/bk_p2",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-delete-own",
+        "op": "delete",
+        "path": "bookings/bk_p2",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "booking-delete-staff",
+        "op": "delete",
+        "path": "bookings/bk_p1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "payment-read-own",
+        "op": "get",
+        "path": "payments/pay_p1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "payment-read-staff",
+        "op": "get",
+        "path": "payments/pay_p1",
+        "expected": "allow",
+        "got": "allow",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "payment-read-other-player",
+        "op": "get",
+        "path": "payments/pay_p1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "payment-read-other-staff",
+        "op": "get",
+        "path": "payments/pay_p1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "payment-delete-owner",
+        "op": "delete",
+        "path": "payments/pay_p1",
+        "expected": "deny",
+        "got": "deny",
+        "match": true,
+        "flagged_rule": false,
+        "detail": ""
+      },
+      {
+        "id": "payment-refund-billing-claim",
+        "op": "update",
+        "path": "payments/pay_p1",
+        "expected": "allow",
+        "got": "deny",
+        "match": false,
+        "flagged_rule": true,
+        "detail": "",
+        "fail_closed": true
+      },
+      {
+        "id": "league-read-verified",
+        "op": "get",
+        "path": "leagues/lg_fall",
+        "expected": "allow",
+        "got": "deny",
+        "match": false,
+        "flagged_rule": true,
+        "detail": "",
+        "fail_closed": true
+      }
+    ]
+  },
+  "flags": [
+    {
+      "rule": "/payments/{paymentId} allow update",
+      "line": 39,
+      "expr": "request.auth.token.admin == true",
+      "reason": "custom auth token claim `request.auth.token.admin` has no equivalent in the migrated schema",
+      "key": "payments:update"
+    },
+    {
+      "rule": "/leagues/{leagueId} allow read",
+      "line": 44,
+      "expr": "request.auth.token.email_verified == true && request.time < timestamp.date(2026, 12, 31)",
+      "reason": "custom auth token claim `request.auth.token.email_verified` has no equivalent in the migrated schema",
+      "key": "leagues:read"
+    }
+  ],
+  "skips": [
+    {
+      "path": "bookings/bk_dup",
+      "reason": "duplicate",
+      "detail": "identical to bookings/bk007"
+    },
+    {
+      "path": "bookings/bk_orphan",
+      "reason": "orphan_ref",
+      "detail": "court -> clubs/club_oak/courts/c9 does not exist"
+    },
+    {
+      "path": "payments/pay_orphan",
+      "reason": "orphan_ref",
+      "detail": "member -> clubs/club_bay/members/fbGone0X99 does not exist"
+    }
+  ],
+  "fixes": [
+    {
+      "where": "bookings/bk010.starts_at",
+      "fix": "ISO string parsed as timestamp",
+      "from": "2026-10-02T15:00:00Z",
+      "to": "2026-10-02T15:00:00+00:00"
+    },
+    {
+      "where": "bookings/bk020.players",
+      "fix": "reference to a missing document dropped from the array",
+      "from": "clubs/club_bay/members/fbGone0X99",
+      "to": null
+    },
+    {
+      "where": "clubs/club_bay/courts/c2.hourly_rate",
+      "fix": "numeric string converted",
+      "from": "30",
+      "to": 30.0
+    },
+    {
+      "where": "clubs/club_bay/members/fbPlayBay1Cc.dupr_rating",
+      "fix": "non-numeric value set to NULL",
+      "from": "n/a",
+      "to": null
+    },
+    {
+      "where": "clubs/club_oak/members/fbPlayOak1Aa.dupr_rating",
+      "fix": "numeric string converted",
+      "from": "4.5",
+      "to": 4.5
+    },
+    {
+      "where": "clubs/club_oak/members/fbPlayOak2Bb.dupr_rating",
+      "fix": "numeric string converted",
+      "from": "3.75",
+      "to": 3.75
+    },
+    {
+      "where": "payments/pay004.amount_cents",
+      "fix": "integral float stored as integer",
+      "from": 4000.0,
+      "to": 4000
+    }
+  ],
+  "applied": {
+    "applied": true,
+    "schema": "migration",
+    "run_id": "20261029T144646-33e0",
+    "approved_by": "sam",
+    "at": "2026-10-29T14:47:07.912694+00:00"
+  },
+  "approval_runs": {
+    "reject": {
+      "untouched": true,
+      "applied": {
+        "applied": false,
+        "why": "rejected"
+      },
+      "seconds": 14.3
+    },
+    "wrong_approver": {
+      "untouched": true,
+      "applied": {
+        "applied": false,
+        "why": "not approved by @sam"
+      },
+      "seconds": 15.6
+    },
+    "approve": {
+      "untouched": false,
+      "applied": {
+        "applied": true,
+        "schema": "migration",
+        "run_id": "20261029T144646-33e0",
+        "approved_by": "sam",
+        "at": "2026-10-29T14:47:07.912694+00:00"
+      },
+      "seconds": 21.8
+    }
+  },
+  "review": {
+    "explanations": [
+      {
+        "item": "bookings.club_id",
+        "explanation": "Every value already matches an existing club, so a foreign key to clubs was added without dropping any rows. Bookings tied to a club cannot now point at a missing club."
+      },
+      {
+        "item": "bookings.member_uid",
+        "explanation": "The Firebase user id is converted to a uuid (member_id) using uuid5, so row-level security can compare it with auth.uid(). The conversion is one-way, so the auth system must derive the same uuid from the Firebase uid or the policies will silently block access."
+      },
+      {
+        "item": "bookings.starts_at",
+        "explanation": "The column mixed Firestore timestamps with ISO strings. The strings were parsed into the timestamp type so all values sort and compare correctly. Check any strings in an unusual format, since they could have been parsed with the wrong timezone."
+      },
+      {
+        "item": "clubs.owner_uid",
+        "explanation": "Same uuid5 conversion as the other user ids, stored as owner_id so ownership-based policies can match auth.uid(). The same caveat applies: the auth side must produce identical uuids."
+      },
+      {
+        "item": "clubs.settings",
+        "explanation": "Kept as jsonb because the keys vary from document to document. Nothing in the database enforces its shape, so the application must validate keys it depends on."
+      },
+      {
+        "item": "courts.hourly_rate",
+        "explanation": "Numeric strings were converted to numbers, and one value was affected. Confirm that conversion is correct for that one row, since a wrong value would silently change pricing."
+      },
+      {
+        "item": "members.dupr_rating",
+        "explanation": "Two numeric strings were converted to numbers. One non-numeric value was set to NULL, which is data loss, so review that member's original value if the rating matters."
+      },
+      {
+        "item": "members.uid",
+        "explanation": "Firebase user id converted to a uuid user_id using uuid5 so row-level security can match auth.uid(). The conversion is one-way, so the mapping from Firebase uid to uuid must be kept consistent wherever users are created or migrated."
+      },
+      {
+        "item": "leagues.club_id",
+        "explanation": "Every value matches an existing club, so a foreign key was added with no rows removed. Leagues always belong to a valid club."
+      },
+      {
+        "item": "payments.club_id",
+        "explanation": "Every value matches an existing club, so a foreign key was added with no rows removed. Payments always link to a valid club."
+      },
+      {
+        "item": "payments.member_uid",
+        "explanation": "Converted to a uuid member_id with uuid5 so policies can compare it with auth.uid(). Confirm that the same derivation is used across all tables so one member's uuid matches everywhere."
+      },
+      {
+        "item": "payments.metadata",
+        "explanation": "Kept as jsonb because the keys differ between documents. Financial fields that matter for reporting should be promoted to real columns later rather than queried from this blob."
+      },
+      {
+        "item": "payments.method",
+        "explanation": "Most documents had the same keys, last4 and type, so they were flattened into columns. Documents missing those keys will have NULLs, so check that NULL is an acceptable meaning for them."
+      },
+      {
+        "item": "bookings.players",
+        "explanation": "This is an array of references, so it became a join table, bookings_players, which allows proper foreign keys and queries in both directions. Make sure every referenced player exists before the foreign keys are enforced."
+      },
+      {
+        "item": "members.favorite_courts",
+        "explanation": "This is an array of references, so it became the join table members_favorite_courts. That keeps each member-court pair as its own row with working foreign keys."
+      }
+    ],
+    "renames_accepted": [],
+    "renames_rejected": [],
+    "unexplained": []
+  },
+  "summary_mode": "model",
+  "judge": {
+    "accuracy": 0.95,
+    "completeness": 0.91,
+    "clarity": 0.91,
+    "issues": [
+      "The report says leagues always belong to a valid club and payments always link to one. A foreign key alone does not establish that the club ID is non-null.",
+      "It says missing payment method keys produce NULLs, but the supplied facts do not establish that behavior.",
+      "The flagged leagues:read rule\u2019s December 31, 2026 time condition is omitted; it matters when writing the replacement policy.",
+      "The report omits the four nullable-column decisions and does not state that join-table reads depend on parent-row readability."
+    ],
+    "score": 0.923
+  },
+  "spend": {
+    "agent_runs": [
+      {
+        "model_calls": 2,
+        "cost_usd": 0.001247,
+        "input_tokens": 1157,
+        "output_tokens": 375
+      },
+      {
+        "model_calls": 2,
+        "cost_usd": 0.001232,
+        "input_tokens": 1157,
+        "output_tokens": 427
+      },
+      {
+        "model_calls": 2,
+        "cost_usd": 0.001209,
+        "input_tokens": 1157,
+        "output_tokens": 313
+      }
+    ],
+    "judge": {
+      "model_calls": 1,
+      "cost_usd": 0.007004,
+      "input_tokens": 3936,
+      "output_tokens": 417
+    }
+  },
+  "sql_path": "/Users/henrymoses/Desktop/buildwithmoses-automations/company-based-builds/supabase/supabase-agents/evals/firebase_migration/out/migration-20261029T144646-33e0.sql"
+}

@@ -1,0 +1,22 @@
+{
+  "_doc": "Labels for the eval: what an honest migration must report. Written by hand from fixture_gen.py.",
+  "collections": {"clubs": 3, "members": 24, "courts": 10, "bookings": 40, "payments": 26, "leagues": 3},
+  "must_skip": {
+    "bookings/bk_orphan": "orphan_ref",
+    "bookings/bk_dup": "duplicate",
+    "payments/pay_orphan": "orphan_ref"
+  },
+  "must_fix": [
+    "clubs/club_oak/members/fbPlayOak1Aa.dupr_rating",
+    "clubs/club_oak/members/fbPlayOak2Bb.dupr_rating",
+    "clubs/club_bay/members/fbPlayBay1Cc.dupr_rating",
+    "clubs/club_bay/courts/c2.hourly_rate",
+    "bookings/bk010.starts_at",
+    "bookings/bk020.players",
+    "payments/pay004.amount_cents"
+  ],
+  "flagged_rules": ["payments:update", "leagues:read"],
+  "jsonb_fields": ["clubs.settings", "payments.metadata"],
+  "flattened_maps": ["payments.method"],
+  "join_tables": ["bookings.players", "members.favorite_courts"]
+}

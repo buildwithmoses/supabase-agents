@@ -1,0 +1,461 @@
+{
+ "users": {
+  "owner_oak": "fbOwnOak9Qx2",
+  "staff_oak": "fbStaffOak3Kd",
+  "player_oak_1": "fbPlayOak1Aa",
+  "player_oak_2": "fbPlayOak2Bb",
+  "player_bay": "fbPlayBay1Cc",
+  "staff_bay": "fbStaffBay5Hq"
+ },
+ "tests": [
+  {
+   "id": "club-read-anon",
+   "auth": null,
+   "op": "get",
+   "path": "clubs/club_oak",
+   "expected": "deny",
+   "why": "signed-out users can't read clubs",
+   "flagged_rule": false
+  },
+  {
+   "id": "club-read-player",
+   "auth": "fbPlayOak1Aa",
+   "op": "get",
+   "path": "clubs/club_oak",
+   "expected": "allow",
+   "why": "any signed-in user reads clubs",
+   "flagged_rule": false
+  },
+  {
+   "id": "club-update-owner",
+   "auth": "fbOwnOak9Qx2",
+   "op": "update",
+   "path": "clubs/club_oak",
+   "expected": "allow",
+   "why": "owner writes their club",
+   "data": {
+    "name": "Oakridge Tennis & Pickleball"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "club-update-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "update",
+   "path": "clubs/club_oak",
+   "expected": "deny",
+   "why": "staff are not the owner",
+   "data": {
+    "name": "Hacked"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "club-create-player",
+   "auth": "fbPlayOak1Aa",
+   "op": "create",
+   "path": "clubs/club_new",
+   "expected": "deny",
+   "why": "create: resource is null, so resource.data.owner_uid fails",
+   "data": {
+    "name": "New Club",
+    "owner_uid": "fbPlayOak1Aa",
+    "city": "Reno",
+    "plan": "starter",
+    "created_at": {
+     "__type__": "timestamp",
+     "seconds": 1790500000,
+     "nanos": 0
+    },
+    "sports": [
+     "tennis"
+    ],
+    "settings": {}
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "member-read-same-club",
+   "auth": "fbPlayOak1Aa",
+   "op": "get",
+   "path": "clubs/club_oak/members/fbPlayOak2Bb",
+   "expected": "allow",
+   "why": "members of a club read its roster",
+   "flagged_rule": false
+  },
+  {
+   "id": "member-read-other-club",
+   "auth": "fbPlayBay1Cc",
+   "op": "get",
+   "path": "clubs/club_oak/members/fbPlayOak2Bb",
+   "expected": "deny",
+   "why": "not a member of club_oak",
+   "flagged_rule": false
+  },
+  {
+   "id": "member-read-anon",
+   "auth": null,
+   "op": "get",
+   "path": "clubs/club_oak/members/fbPlayOak2Bb",
+   "expected": "deny",
+   "why": "signed out",
+   "flagged_rule": false
+  },
+  {
+   "id": "member-update-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "update",
+   "path": "clubs/club_oak/members/fbPlayOak2Bb",
+   "expected": "allow",
+   "why": "staff manage members",
+   "data": {
+    "role": "staff"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "member-update-player",
+   "auth": "fbPlayOak1Aa",
+   "op": "update",
+   "path": "clubs/club_oak/members/fbPlayOak2Bb",
+   "expected": "deny",
+   "why": "players can't",
+   "data": {
+    "role": "staff"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "member-create-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "create",
+   "path": "clubs/club_oak/members/fbNewOak0Zz",
+   "expected": "allow",
+   "why": "staff add members",
+   "data": {
+    "uid": "fbNewOak0Zz",
+    "display_name": "New Player",
+    "email": "new@oak.example",
+    "role": "player",
+    "joined_at": {
+     "__type__": "timestamp",
+     "seconds": 1790500000,
+     "nanos": 0
+    },
+    "dupr_rating": 3.1
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "member-create-player",
+   "auth": "fbPlayOak1Aa",
+   "op": "create",
+   "path": "clubs/club_oak/members/fbNewOak1Yy",
+   "expected": "deny",
+   "why": "players can't add members",
+   "data": {
+    "uid": "fbNewOak1Yy",
+    "display_name": "Sneaky",
+    "email": "s@oak.example",
+    "role": "admin",
+    "joined_at": {
+     "__type__": "timestamp",
+     "seconds": 1790500000,
+     "nanos": 0
+    },
+    "dupr_rating": 3.1
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "member-update-other-staff",
+   "auth": "fbStaffBay5Hq",
+   "op": "update",
+   "path": "clubs/club_oak/members/fbPlayOak2Bb",
+   "expected": "deny",
+   "why": "staff of another club",
+   "data": {
+    "role": "admin"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "court-read-anon",
+   "auth": null,
+   "op": "get",
+   "path": "clubs/club_bay/courts/c1",
+   "expected": "deny",
+   "why": "signed out",
+   "flagged_rule": false
+  },
+  {
+   "id": "court-read-other-club",
+   "auth": "fbPlayOak1Aa",
+   "op": "get",
+   "path": "clubs/club_bay/courts/c1",
+   "expected": "allow",
+   "why": "any signed-in user reads courts",
+   "flagged_rule": false
+  },
+  {
+   "id": "court-update-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "update",
+   "path": "clubs/club_oak/courts/c1",
+   "expected": "allow",
+   "why": "staff set rates",
+   "data": {
+    "hourly_rate": 40.0
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "court-update-other-staff",
+   "auth": "fbStaffBay5Hq",
+   "op": "update",
+   "path": "clubs/club_oak/courts/c1",
+   "expected": "deny",
+   "why": "staff of another club",
+   "data": {
+    "hourly_rate": 1.0
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-read-own",
+   "auth": "fbPlayOak1Aa",
+   "op": "get",
+   "path": "bookings/bk_p1",
+   "expected": "allow",
+   "why": "own booking",
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-read-other-player",
+   "auth": "fbPlayOak2Bb",
+   "op": "get",
+   "path": "bookings/bk_p1",
+   "expected": "deny",
+   "why": "someone else's booking",
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-read-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "get",
+   "path": "bookings/bk_p1",
+   "expected": "allow",
+   "why": "staff of the booking's club",
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-read-other-staff",
+   "auth": "fbStaffBay5Hq",
+   "op": "get",
+   "path": "bookings/bk_p1",
+   "expected": "deny",
+   "why": "staff of another club",
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-create-own",
+   "auth": "fbPlayOak1Aa",
+   "op": "create",
+   "path": "bookings/bk_new1",
+   "expected": "allow",
+   "why": "member books for themselves",
+   "data": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "starts_at": {
+     "__type__": "timestamp",
+     "seconds": 1790900000,
+     "nanos": 0
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "seconds": 1790903600,
+     "nanos": 0
+    },
+    "status": "confirmed",
+    "member_uid": "fbPlayOak1Aa"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-create-for-other",
+   "auth": "fbPlayOak1Aa",
+   "op": "create",
+   "path": "bookings/bk_new2",
+   "expected": "deny",
+   "why": "can't book as someone else",
+   "data": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "starts_at": {
+     "__type__": "timestamp",
+     "seconds": 1790900000,
+     "nanos": 0
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "seconds": 1790903600,
+     "nanos": 0
+    },
+    "status": "confirmed",
+    "member_uid": "fbPlayOak2Bb"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-create-other-club",
+   "auth": "fbPlayBay1Cc",
+   "op": "create",
+   "path": "bookings/bk_new3",
+   "expected": "deny",
+   "why": "not a member of club_oak",
+   "data": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "starts_at": {
+     "__type__": "timestamp",
+     "seconds": 1790900000,
+     "nanos": 0
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "seconds": 1790903600,
+     "nanos": 0
+    },
+    "status": "confirmed",
+    "member_uid": "fbPlayBay1Cc"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-update-own",
+   "auth": "fbPlayOak1Aa",
+   "op": "update",
+   "path": "bookings/bk_p1",
+   "expected": "allow",
+   "why": "own booking",
+   "data": {
+    "status": "cancelled"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-update-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "update",
+   "path": "bookings/bk_p2",
+   "expected": "deny",
+   "why": "rule only lets the booking's member update",
+   "data": {
+    "status": "cancelled"
+   },
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-delete-own",
+   "auth": "fbPlayOak2Bb",
+   "op": "delete",
+   "path": "bookings/bk_p2",
+   "expected": "allow",
+   "why": "own booking",
+   "flagged_rule": false
+  },
+  {
+   "id": "booking-delete-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "delete",
+   "path": "bookings/bk_p1",
+   "expected": "deny",
+   "why": "rule only lets the booking's member delete",
+   "flagged_rule": false
+  },
+  {
+   "id": "payment-read-own",
+   "auth": "fbPlayOak1Aa",
+   "op": "get",
+   "path": "payments/pay_p1",
+   "expected": "allow",
+   "why": "own payment",
+   "flagged_rule": false
+  },
+  {
+   "id": "payment-read-staff",
+   "auth": "fbStaffOak3Kd",
+   "op": "get",
+   "path": "payments/pay_p1",
+   "expected": "allow",
+   "why": "staff of the club",
+   "flagged_rule": false
+  },
+  {
+   "id": "payment-read-other-player",
+   "auth": "fbPlayOak2Bb",
+   "op": "get",
+   "path": "payments/pay_p1",
+   "expected": "deny",
+   "why": "someone else's payment",
+   "flagged_rule": false
+  },
+  {
+   "id": "payment-read-other-staff",
+   "auth": "fbStaffBay5Hq",
+   "op": "get",
+   "path": "payments/pay_p1",
+   "expected": "deny",
+   "why": "staff of another club",
+   "flagged_rule": false
+  },
+  {
+   "id": "payment-delete-owner",
+   "auth": "fbOwnOak9Qx2",
+   "op": "delete",
+   "path": "payments/pay_p1",
+   "expected": "deny",
+   "why": "nobody deletes payments",
+   "flagged_rule": false
+  },
+  {
+   "id": "payment-refund-billing-claim",
+   "auth": "fbBillingSvc01",
+   "op": "update",
+   "path": "payments/pay_p1",
+   "expected": "allow",
+   "why": "custom claim admin == true",
+   "data": {
+    "refunded": true
+   },
+   "token": {
+    "admin": true
+   },
+   "flagged_rule": true,
+   "flag_key": "payments:update"
+  },
+  {
+   "id": "league-read-verified",
+   "auth": "fbPlayOak1Aa",
+   "op": "get",
+   "path": "leagues/lg_fall",
+   "expected": "allow",
+   "why": "verified email before the season closes",
+   "token": {
+    "email_verified": true
+   },
+   "flagged_rule": true,
+   "flag_key": "leagues:read"
+  }
+ ]
+}

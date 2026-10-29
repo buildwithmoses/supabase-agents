@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function isMember(clubId) {
+      return exists(/databases/$(database)/documents/clubs/$(clubId)/members/$(request.auth.uid));
+    }
+    function isStaff(clubId) {
+      return get(/databases/$(database)/documents/clubs/$(clubId)/members/$(request.auth.uid)).data.role in ['staff', 'admin'];
+    }
+
+    match /clubs/{clubId} {
+      allow read: if isSignedIn();
+      allow write: if request.auth.uid == resource.data.owner_uid;
+
+      match /members/{memberId} {
+        allow read: if isMember(clubId);
+        allow write: if isStaff(clubId);
+      }
+      match /courts/{courtId} {
+        allow read: if isSignedIn();
+        allow write: if isStaff(clubId);
+      }
+    }
+
+    match /bookings/{bookingId} {
+      allow read: if request.auth.uid == resource.data.member_uid || isStaff(resource.data.club_id);
+      allow create: if request.auth.uid == request.resource.data.member_uid && isMember(request.resource.data.club_id);
+      allow update, delete: if request.auth.uid == resource.data.member_uid;
+    }
+
+    match /payments/{paymentId} {
+      allow read: if request.auth.uid == resource.data.member_uid || isStaff(resource.data.club_id);
+      allow create, delete: if false;
+      // Refunds are issued by the billing service account, which carries a custom claim.
+      allow update: if request.auth.token.admin == true;
+    }
+
+    match /leagues/{leagueId} {
+      // League pages open to verified players until the season closes.
+      allow read: if request.auth.token.email_verified == true && request.time < timestamp.date(2026, 12, 31);
+    }
+  }
+}

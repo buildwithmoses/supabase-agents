@@ -1,0 +1,11 @@
+{
+  "planted_recall": 1.0,
+  "no_false_findings": 1.0,
+  "migrations_proven": 1.0,
+  "no_change_without_approval": 1.0,
+  "rls_behavior_correct": 1.0,
+  "fixed_after_apply": 1.0,
+  "query_speedup": 14.4,
+  "explanation_clarity": 0.8,
+  "model_draft_pass_rate": 1.0
+}

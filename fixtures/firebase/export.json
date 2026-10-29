@@ -1,0 +1,2565 @@
+{
+ "bookings": {
+  "bk001": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790118800
+    },
+    "member_uid": "fbStaffOak3Kd",
+    "notes": "Bring extra balls",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOwnOak9Qx2"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak3A21"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790115200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk002": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790208800
+    },
+    "member_uid": "fbPlayOak1Aa",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbStaffOak3Kd"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak3A21"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790205200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk003": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790298800
+    },
+    "member_uid": "fbPlayOak2Bb",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak2Bb"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak0F29"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790295200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk004": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790388800
+    },
+    "member_uid": "fbOak0F29",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak2Bb"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak2K17"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790385200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk005": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790478800
+    },
+    "member_uid": "fbOak1B78",
+    "notes": "Lesson with coach",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak3A21"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbStaffOak3Kd"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790475200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk006": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790568800
+    },
+    "member_uid": "fbOak2K17",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak2K17"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak0F29"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790565200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk007": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790658800
+    },
+    "member_uid": "fbOak3A21",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak2K17"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak0F29"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790655200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk008": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790748800
+    },
+    "member_uid": "fbOak4B40",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak2K17"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak1B78"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790745200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk009": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790838800
+    },
+    "member_uid": "fbStaffOak3Kd",
+    "notes": "Bring extra balls",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak2K17"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak2Bb"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790835200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk010": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790928800
+    },
+    "member_uid": "fbPlayOak1Aa",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak1Aa"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak4B40"
+     }
+    ],
+    "starts_at": "2026-10-02T15:00:00Z",
+    "status": "confirmed"
+   }
+  },
+  "bk011": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790982800
+    },
+    "member_uid": "fbPlayOak2Bb",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak2Bb"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOwnOak9Qx2"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790979200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk012": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1791072800
+    },
+    "member_uid": "fbOak0F29",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak1Aa"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak0F29"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1791069200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk013": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790118800
+    },
+    "member_uid": "fbStaffBay5Hq",
+    "notes": "Doubles",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbOwnBay4Lm7"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbStaffBay5Hq"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790115200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk014": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790208800
+    },
+    "member_uid": "fbPlayBay1Cc",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay2F22"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay1B84"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790205200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk015": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790298800
+    },
+    "member_uid": "fbBay0E81",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay2F22"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbStaffBay5Hq"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790295200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk016": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790388800
+    },
+    "member_uid": "fbBay1B84",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbOwnBay4Lm7"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay0E81"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790385200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk017": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790478800
+    },
+    "member_uid": "fbBay2F22",
+    "notes": "Lesson with coach",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay3K17"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay0E81"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790475200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk018": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790568800
+    },
+    "member_uid": "fbBay3K17",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbStaffBay5Hq"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay0E81"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790565200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk019": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790658800
+    },
+    "member_uid": "fbBay4H97",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay3K17"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbOwnBay4Lm7"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790655200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk020": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790748800
+    },
+    "member_uid": "fbStaffBay5Hq",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbStaffBay5Hq"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay4H97"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbGone0X99"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790745200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk021": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790838800
+    },
+    "member_uid": "fbPlayBay1Cc",
+    "notes": "Doubles",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbPlayBay1Cc"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbOwnBay4Lm7"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790835200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk022": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790928800
+    },
+    "member_uid": "fbBay0E81",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbOwnBay4Lm7"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay4H97"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790925200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk023": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790982800
+    },
+    "member_uid": "fbBay1B84",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbPlayBay1Cc"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay1B84"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790979200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk024": {
+   "fields": {
+    "club_id": "club_bay",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1791072800
+    },
+    "member_uid": "fbBay2F22",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay2F22"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_bay/members/fbBay1B84"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1791069200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk025": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790118800
+    },
+    "member_uid": "fbStaffElm8Rw",
+    "notes": "Lesson with coach",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbOwnElm1Zt8"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbStaffElm8Rw"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790115200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk026": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790208800
+    },
+    "member_uid": "fbElm0B25",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbStaffElm8Rw"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm3J83"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790205200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk027": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790298800
+    },
+    "member_uid": "fbElm1C53",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm0B25"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm2G15"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790295200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk028": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c4"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790388800
+    },
+    "member_uid": "fbElm2G15",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm1C53"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbOwnElm1Zt8"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790385200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk029": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790478800
+    },
+    "member_uid": "fbElm3J83",
+    "notes": "Lesson with coach",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm4F86"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm1C53"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790475200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk030": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790568800
+    },
+    "member_uid": "fbElm4F86",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm1C53"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm0B25"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790565200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk031": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790658800
+    },
+    "member_uid": "fbStaffElm8Rw",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbStaffElm8Rw"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbOwnElm1Zt8"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790655200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk032": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c4"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790748800
+    },
+    "member_uid": "fbElm0B25",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm0B25"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm3J83"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790745200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk033": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790838800
+    },
+    "member_uid": "fbElm1C53",
+    "notes": "Doubles",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm1C53"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm3J83"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790835200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk034": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790928800
+    },
+    "member_uid": "fbElm2G15",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbOwnElm1Zt8"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbStaffElm8Rw"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790925200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk035": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c3"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790982800
+    },
+    "member_uid": "fbElm3J83",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm0B25"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbStaffElm8Rw"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790979200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk036": {
+   "fields": {
+    "club_id": "club_elm",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/courts/c4"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1791072800
+    },
+    "member_uid": "fbElm4F86",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbElm2G15"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_elm/members/fbOwnElm1Zt8"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1791069200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk_dup": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790658800
+    },
+    "member_uid": "fbOak3A21",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak2K17"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak0F29"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790655200
+    },
+    "status": "cancelled"
+   }
+  },
+  "bk_orphan": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c9"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790478800
+    },
+    "member_uid": "fbOak1B78",
+    "notes": "Lesson with coach",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbOak3A21"
+     },
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbStaffOak3Kd"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790475200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk_p1": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c1"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790262800
+    },
+    "member_uid": "fbPlayOak1Aa",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak1Aa"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790259200
+    },
+    "status": "confirmed"
+   }
+  },
+  "bk_p2": {
+   "fields": {
+    "club_id": "club_oak",
+    "court": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/courts/c2"
+    },
+    "ends_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790349200
+    },
+    "member_uid": "fbPlayOak2Bb",
+    "players": [
+     {
+      "__type__": "ref",
+      "path": "clubs/club_oak/members/fbPlayOak2Bb"
+     }
+    ],
+    "starts_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790345600
+    },
+    "status": "confirmed"
+   }
+  }
+ },
+ "clubs": {
+  "club_bay": {
+   "__collections__": {
+    "courts": {
+     "c1": {
+      "fields": {
+       "hourly_rate": 25.0,
+       "indoor": true,
+       "name": "Court 1",
+       "surface": "clay"
+      }
+     },
+     "c2": {
+      "fields": {
+       "hourly_rate": "30",
+       "indoor": false,
+       "name": "Court 2",
+       "surface": "clay"
+      }
+     },
+     "c3": {
+      "fields": {
+       "hourly_rate": 35.0,
+       "name": "Court 3",
+       "surface": "acrylic"
+      }
+     }
+    },
+    "members": {
+     "fbBay0E81": {
+      "fields": {
+       "display_name": "Lee Moss",
+       "dupr_rating": 4.56,
+       "email": "lee.3@bay.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1769264000
+       },
+       "phone": "555-0120",
+       "role": "player",
+       "uid": "fbBay0E81"
+      }
+     },
+     "fbBay1B84": {
+      "fields": {
+       "display_name": "Zia Nash",
+       "dupr_rating": 4.15,
+       "email": "zia.4@bay.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1770992000
+       },
+       "role": "player",
+       "uid": "fbBay1B84"
+      }
+     },
+     "fbBay2F22": {
+      "fields": {
+       "display_name": "Wren Ito",
+       "dupr_rating": 4.05,
+       "email": "wren.5@bay.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1772720000
+       },
+       "phone": "555-0153",
+       "role": "player",
+       "uid": "fbBay2F22"
+      }
+     },
+     "fbBay3K17": {
+      "fields": {
+       "display_name": "Zia Nash",
+       "dupr_rating": 4.46,
+       "email": "zia.6@bay.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1774448000
+       },
+       "phone": "555-0146",
+       "role": "player",
+       "uid": "fbBay3K17"
+      }
+     },
+     "fbBay4H97": {
+      "fields": {
+       "display_name": "Wren Quinn",
+       "dupr_rating": 4.22,
+       "email": "wren.7@bay.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1776176000
+       },
+       "role": "player",
+       "uid": "fbBay4H97"
+      }
+     },
+     "fbOwnBay4Lm7": {
+      "fields": {
+       "display_name": "Bayside Owner",
+       "dupr_rating": 4.85,
+       "email": "bayside.0@bay.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1764080000
+       },
+       "phone": "555-0156",
+       "role": "admin",
+       "uid": "fbOwnBay4Lm7"
+      }
+     },
+     "fbPlayBay1Cc": {
+      "fields": {
+       "display_name": "Theo Banks",
+       "dupr_rating": "n/a",
+       "email": "theo.2@bay.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_bay/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1767536000
+       },
+       "phone": "555-0199",
+       "role": "player",
+       "uid": "fbPlayBay1Cc"
+      }
+     },
+     "fbStaffBay5Hq": {
+      "fields": {
+       "display_name": "Ola Grant",
+       "dupr_rating": 3.6,
+       "email": "ola.1@bay.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1765808000
+       },
+       "role": "staff",
+       "uid": "fbStaffBay5Hq"
+      }
+     }
+    }
+   },
+   "fields": {
+    "city": "Tampa",
+    "created_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1752848000
+    },
+    "name": "Bayside Pickleball",
+    "owner_uid": "fbOwnBay4Lm7",
+    "plan": "starter",
+    "settings": {
+     "booking_window_days": 8,
+     "theme": "blue",
+     "waitlist": true
+    },
+    "sports": [
+     "pickleball"
+    ]
+   }
+  },
+  "club_elm": {
+   "__collections__": {
+    "courts": {
+     "c1": {
+      "fields": {
+       "hourly_rate": 25.0,
+       "indoor": true,
+       "name": "Court 1",
+       "surface": "clay"
+      }
+     },
+     "c2": {
+      "fields": {
+       "hourly_rate": 30.0,
+       "indoor": false,
+       "name": "Court 2",
+       "surface": "hard"
+      }
+     },
+     "c3": {
+      "fields": {
+       "hourly_rate": 35.0,
+       "indoor": false,
+       "name": "Court 3",
+       "surface": "hard"
+      }
+     },
+     "c4": {
+      "fields": {
+       "hourly_rate": 40.0,
+       "indoor": false,
+       "name": "Court 4",
+       "surface": "clay"
+      }
+     }
+    },
+    "members": {
+     "fbElm0B25": {
+      "fields": {
+       "display_name": "Wren Quinn",
+       "dupr_rating": 4.46,
+       "email": "wren.2@elm.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1767536000
+       },
+       "phone": "555-0149",
+       "role": "player",
+       "uid": "fbElm0B25"
+      }
+     },
+     "fbElm1C53": {
+      "fields": {
+       "display_name": "Kai Rowe",
+       "dupr_rating": 4.29,
+       "email": "kai.3@elm.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1769264000
+       },
+       "phone": "555-0197",
+       "role": "player",
+       "uid": "fbElm1C53"
+      }
+     },
+     "fbElm2G15": {
+      "fields": {
+       "display_name": "Lee Ito",
+       "dupr_rating": 4.64,
+       "email": "lee.4@elm.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1770992000
+       },
+       "role": "player",
+       "uid": "fbElm2G15"
+      }
+     },
+     "fbElm3J83": {
+      "fields": {
+       "display_name": "Reese Pike",
+       "dupr_rating": 3.57,
+       "email": "reese.5@elm.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1772720000
+       },
+       "phone": "555-0159",
+       "role": "player",
+       "uid": "fbElm3J83"
+      }
+     },
+     "fbElm4F86": {
+      "fields": {
+       "display_name": "Tam Vale",
+       "dupr_rating": 4.77,
+       "email": "tam.6@elm.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1774448000
+       },
+       "phone": "555-0154",
+       "role": "player",
+       "uid": "fbElm4F86"
+      }
+     },
+     "fbOwnElm1Zt8": {
+      "fields": {
+       "display_name": "Elmwood Owner",
+       "dupr_rating": 3.95,
+       "email": "elmwood.0@elm.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_elm/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1764080000
+       },
+       "phone": "555-0195",
+       "role": "admin",
+       "uid": "fbOwnElm1Zt8"
+      }
+     },
+     "fbStaffElm8Rw": {
+      "fields": {
+       "display_name": "Ruth Kim",
+       "dupr_rating": 3.13,
+       "email": "ruth.1@elm.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1765808000
+       },
+       "role": "admin",
+       "uid": "fbStaffElm8Rw"
+      }
+     }
+    }
+   },
+   "fields": {
+    "city": "Denver",
+    "created_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1750256000
+    },
+    "name": "Elmwood Racquet Club",
+    "owner_uid": "fbOwnElm1Zt8",
+    "plan": "pro",
+    "settings": {
+     "booking_window_days": 9,
+     "theme": "red",
+     "waitlist": true
+    },
+    "sports": [
+     "tennis",
+     "pickleball"
+    ]
+   }
+  },
+  "club_oak": {
+   "__collections__": {
+    "courts": {
+     "c1": {
+      "fields": {
+       "hourly_rate": 25.0,
+       "indoor": true,
+       "name": "Court 1",
+       "surface": "clay"
+      }
+     },
+     "c2": {
+      "fields": {
+       "hourly_rate": 30.0,
+       "indoor": false,
+       "name": "Court 2",
+       "surface": "hard"
+      }
+     },
+     "c3": {
+      "fields": {
+       "hourly_rate": 35.0,
+       "indoor": false,
+       "name": "Court 3",
+       "surface": "acrylic"
+      }
+     }
+    },
+    "members": {
+     "fbOak0F29": {
+      "fields": {
+       "display_name": "Sky Hale",
+       "dupr_rating": 3.1,
+       "email": "sky.4@oak.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1770992000
+       },
+       "role": "player",
+       "uid": "fbOak0F29"
+      }
+     },
+     "fbOak1B78": {
+      "fields": {
+       "display_name": "Jules Pike",
+       "dupr_rating": 3.44,
+       "email": "jules.5@oak.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1772720000
+       },
+       "phone": "555-0181",
+       "role": "player",
+       "uid": "fbOak1B78"
+      }
+     },
+     "fbOak2K17": {
+      "fields": {
+       "display_name": "Wren Nash",
+       "dupr_rating": 4.72,
+       "email": "wren.6@oak.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1774448000
+       },
+       "phone": "555-0147",
+       "role": "player",
+       "uid": "fbOak2K17"
+      }
+     },
+     "fbOak3A21": {
+      "fields": {
+       "display_name": "Sky Quinn",
+       "dupr_rating": 3.84,
+       "email": "sky.7@oak.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1776176000
+       },
+       "role": "player",
+       "uid": "fbOak3A21"
+      }
+     },
+     "fbOak4B40": {
+      "fields": {
+       "display_name": "Jules Sato",
+       "dupr_rating": 4.08,
+       "email": "jules.8@oak.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1777904000
+       },
+       "phone": "555-0183",
+       "role": "player",
+       "uid": "fbOak4B40"
+      }
+     },
+     "fbOwnOak9Qx2": {
+      "fields": {
+       "display_name": "Oakridge Owner",
+       "dupr_rating": 3.25,
+       "email": "oakridge.0@oak.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1764080000
+       },
+       "phone": "555-0138",
+       "role": "admin",
+       "uid": "fbOwnOak9Qx2"
+      }
+     },
+     "fbPlayOak1Aa": {
+      "fields": {
+       "display_name": "Chris Lowe",
+       "dupr_rating": "4.5",
+       "email": "chris.2@oak.example",
+       "favorite_courts": [
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c1"
+        },
+        {
+         "__type__": "ref",
+         "path": "clubs/club_oak/courts/c2"
+        }
+       ],
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1767536000
+       },
+       "phone": "555-0117",
+       "role": "player",
+       "uid": "fbPlayOak1Aa"
+      }
+     },
+     "fbPlayOak2Bb": {
+      "fields": {
+       "display_name": "Mina Park",
+       "dupr_rating": "3.75",
+       "email": "mina.3@oak.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1769264000
+       },
+       "phone": "555-0160",
+       "role": "player",
+       "uid": "fbPlayOak2Bb"
+      }
+     },
+     "fbStaffOak3Kd": {
+      "fields": {
+       "display_name": "Dana Reyes",
+       "dupr_rating": 4.26,
+       "email": "dana.1@oak.example",
+       "joined_at": {
+        "__type__": "timestamp",
+        "nanos": 0,
+        "seconds": 1765808000
+       },
+       "role": "staff",
+       "uid": "fbStaffOak3Kd"
+      }
+     }
+    }
+   },
+   "fields": {
+    "city": "Austin",
+    "created_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1755440000
+    },
+    "name": "Oakridge Tennis Club",
+    "owner_uid": "fbOwnOak9Qx2",
+    "plan": "pro",
+    "settings": {
+     "booking_window_days": 7,
+     "guest_fee_cents": 1500,
+     "theme": "green"
+    },
+    "sports": [
+     "tennis"
+    ]
+   }
+  }
+ },
+ "leagues": {
+  "lg_fall": {
+   "fields": {
+    "club_id": "club_oak",
+    "max_teams": 8,
+    "name": "Fall Ladder",
+    "season_ends": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1795184000
+    }
+   }
+  },
+  "lg_junior": {
+   "fields": {
+    "club_id": "club_elm",
+    "max_teams": 16,
+    "name": "Junior Open",
+    "season_ends": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1800368000
+    }
+   }
+  },
+  "lg_mixed": {
+   "fields": {
+    "club_id": "club_bay",
+    "max_teams": 12,
+    "name": "Mixed Doubles",
+    "season_ends": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1797776000
+    }
+   }
+  }
+ },
+ "payments": {
+  "pay001": {
+   "fields": {
+    "amount_cents": 2500,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbStaffOak3Kd"
+    },
+    "member_uid": "fbStaffOak3Kd",
+    "metadata": {
+     "promo": "FALL25",
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4001",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790036000
+    }
+   }
+  },
+  "pay002": {
+   "fields": {
+    "amount_cents": 3000,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbPlayOak1Aa"
+    },
+    "member_uid": "fbPlayOak1Aa",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4009",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790075600
+    }
+   }
+  },
+  "pay003": {
+   "fields": {
+    "amount_cents": 3500,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbPlayOak2Bb"
+    },
+    "member_uid": "fbPlayOak2Bb",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4017",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790115200
+    }
+   }
+  },
+  "pay004": {
+   "fields": {
+    "amount_cents": 4000.0,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbOak0F29"
+    },
+    "member_uid": "fbOak0F29",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4025",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790154800
+    },
+    "refunded": true
+   }
+  },
+  "pay005": {
+   "fields": {
+    "amount_cents": 2500,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbOak1B78"
+    },
+    "member_uid": "fbOak1B78",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4033",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790194400
+    }
+   }
+  },
+  "pay006": {
+   "fields": {
+    "amount_cents": 3000,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbOak2K17"
+    },
+    "member_uid": "fbOak2K17",
+    "metadata": {
+     "promo": "FALL25",
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4041",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790234000
+    }
+   }
+  },
+  "pay007": {
+   "fields": {
+    "amount_cents": 3500,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbOak3A21"
+    },
+    "member_uid": "fbOak3A21",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4049",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790273600
+    }
+   }
+  },
+  "pay008": {
+   "fields": {
+    "amount_cents": 4000,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbOak4B40"
+    },
+    "member_uid": "fbOak4B40",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4057",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790313200
+    }
+   }
+  },
+  "pay009": {
+   "fields": {
+    "amount_cents": 2500,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbStaffBay5Hq"
+    },
+    "member_uid": "fbStaffBay5Hq",
+    "metadata": {
+     "promo": "FALL25",
+     "source": "app"
+    },
+    "method": {
+     "last4": "4009",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790324000
+    }
+   }
+  },
+  "pay010": {
+   "fields": {
+    "amount_cents": 3000,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbPlayBay1Cc"
+    },
+    "member_uid": "fbPlayBay1Cc",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4017",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790363600
+    }
+   }
+  },
+  "pay011": {
+   "fields": {
+    "amount_cents": 3500,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbBay0E81"
+    },
+    "member_uid": "fbBay0E81",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4025",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790403200
+    }
+   }
+  },
+  "pay012": {
+   "fields": {
+    "amount_cents": 4000,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbBay1B84"
+    },
+    "member_uid": "fbBay1B84",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4033",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790442800
+    },
+    "refunded": true
+   }
+  },
+  "pay013": {
+   "fields": {
+    "amount_cents": 2500,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbBay2F22"
+    },
+    "member_uid": "fbBay2F22",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4041",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790482400
+    }
+   }
+  },
+  "pay014": {
+   "fields": {
+    "amount_cents": 3000,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbBay3K17"
+    },
+    "member_uid": "fbBay3K17",
+    "metadata": {
+     "promo": "FALL25",
+     "source": "app"
+    },
+    "method": {
+     "last4": "4049",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790522000
+    }
+   }
+  },
+  "pay015": {
+   "fields": {
+    "amount_cents": 3500,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbBay4H97"
+    },
+    "member_uid": "fbBay4H97",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4057",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790561600
+    }
+   }
+  },
+  "pay016": {
+   "fields": {
+    "amount_cents": 4000,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbStaffBay5Hq"
+    },
+    "member_uid": "fbStaffBay5Hq",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4065",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790601200
+    }
+   }
+  },
+  "pay017": {
+   "fields": {
+    "amount_cents": 2500,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbStaffElm8Rw"
+    },
+    "member_uid": "fbStaffElm8Rw",
+    "metadata": {
+     "promo": "FALL25",
+     "source": "app"
+    },
+    "method": {
+     "last4": "4017",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790612000
+    }
+   }
+  },
+  "pay018": {
+   "fields": {
+    "amount_cents": 3000,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbElm0B25"
+    },
+    "member_uid": "fbElm0B25",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4025",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790651600
+    }
+   }
+  },
+  "pay019": {
+   "fields": {
+    "amount_cents": 3500,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbElm1C53"
+    },
+    "member_uid": "fbElm1C53",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4033",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790691200
+    }
+   }
+  },
+  "pay020": {
+   "fields": {
+    "amount_cents": 4000,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbElm2G15"
+    },
+    "member_uid": "fbElm2G15",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4041",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790730800
+    },
+    "refunded": true
+   }
+  },
+  "pay021": {
+   "fields": {
+    "amount_cents": 2500,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbElm3J83"
+    },
+    "member_uid": "fbElm3J83",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4049",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790770400
+    }
+   }
+  },
+  "pay022": {
+   "fields": {
+    "amount_cents": 3000,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbElm4F86"
+    },
+    "member_uid": "fbElm4F86",
+    "metadata": {
+     "promo": "FALL25",
+     "source": "app"
+    },
+    "method": {
+     "last4": "4057",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790810000
+    }
+   }
+  },
+  "pay023": {
+   "fields": {
+    "amount_cents": 3500,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbStaffElm8Rw"
+    },
+    "member_uid": "fbStaffElm8Rw",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4065",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790849600
+    }
+   }
+  },
+  "pay024": {
+   "fields": {
+    "amount_cents": 4000,
+    "club_id": "club_elm",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_elm/members/fbElm0B25"
+    },
+    "member_uid": "fbElm0B25",
+    "metadata": {
+     "source": "front_desk"
+    },
+    "method": {
+     "last4": "4073",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790889200
+    }
+   }
+  },
+  "pay_orphan": {
+   "fields": {
+    "amount_cents": 2500,
+    "club_id": "club_bay",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_bay/members/fbGone0X99"
+    },
+    "member_uid": "fbGone0X99",
+    "metadata": {
+     "promo": "FALL25",
+     "source": "app"
+    },
+    "method": {
+     "last4": "4009",
+     "type": "ach"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790324000
+    }
+   }
+  },
+  "pay_p1": {
+   "fields": {
+    "amount_cents": 4000,
+    "club_id": "club_oak",
+    "currency": "usd",
+    "member": {
+     "__type__": "ref",
+     "path": "clubs/club_oak/members/fbPlayOak1Aa"
+    },
+    "member_uid": "fbPlayOak1Aa",
+    "metadata": {
+     "source": "app"
+    },
+    "method": {
+     "last4": "4242",
+     "type": "card"
+    },
+    "paid_at": {
+     "__type__": "timestamp",
+     "nanos": 0,
+     "seconds": 1790007200
+    }
+   }
+  }
+ }
+}
